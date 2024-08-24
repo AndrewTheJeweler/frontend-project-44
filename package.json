@@ -4,7 +4,8 @@
   "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js"
   },
   "description": "[![Actions Status](https://github.com/AndrewTheJeweler/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AndrewTheJeweler/frontend-project-44/actions)",
   "main": "src/cli.js",
@@ -14,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mathjs": "^13.0.3",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
