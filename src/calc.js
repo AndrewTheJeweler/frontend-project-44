@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import { evaluate } from 'mathjs'; // Функция для просчета выражения из строки
 import { greetings, arr, arrayOperators } from './index.js'; // функции приветствия, массивов со случайными числами и операторами
 
 const array = arr(6);
@@ -14,7 +13,14 @@ const calcGames = () => {
   let o = 0;
   while (count <= 2) {
     console.log(`Question: ${array[i]} ${arrOp[o]} ${array[k]}`);
-    const rezult = evaluate(array[i] + arrOp[o] + array[k]);
+    let rezult;
+    if (arrOp[o] === '*') {
+      rezult = array[i] * array[k];
+    } else if (arrOp[o] === '+') {
+      rezult = array[i] + array[k];
+    } else {
+      rezult = array[i] - array[k];
+    }
     const answer = readlineSync.question('Your answer: ');
     if (Number(answer) === rezult) {
       console.log('Correct!');
