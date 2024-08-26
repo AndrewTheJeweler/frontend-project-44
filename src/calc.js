@@ -14,12 +14,15 @@ const calcGames = () => {
   while (count <= 2) {
     console.log(`Question: ${array[i]} ${arrOp[o]} ${array[k]}`);
     let rezult;
-    if (arrOp[o] === '*') {
-      rezult = array[i] * array[k];
-    } else if (arrOp[o] === '+') {
-      rezult = array[i] + array[k];
-    } else {
-      rezult = array[i] - array[k];
+    switch (arrOp[o]) {
+      case '*':
+        rezult = array[i] * array[k];
+        break;
+      case '+':
+        rezult = array[i] + array[k];
+        break;
+      default:
+        rezult = array[i] - array[k];
     }
     const answer = readlineSync.question('Your answer: ');
     if (Number(answer) === rezult) {
@@ -32,7 +35,7 @@ const calcGames = () => {
         console.log(`Congratulations, ${name}`);
       }
     } else {
-      console.log(`'${answer}' is wrong ;(. Correct answer was '${rezult}'`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rezult}' \nLet's try again, ${name}!`);
       count += 3;
     }
   }
