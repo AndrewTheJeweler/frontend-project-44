@@ -19,10 +19,10 @@ const evenGames = () => {
         console.log(`Congratulations, ${name}!`);
       }
     } else if (array[i] % 2 === 0) {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was 'yes'.`);
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was 'yes'. \nLet's try again, ${name}!`);
       break;
     } else if (array[i] % 2 !== 0) {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was 'no'.`);
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
       break;
     }
   }
