@@ -7,7 +7,7 @@ const randomNumber = (min, max) => {
   return num;
 };
 
-// Функция приветсвтия (возвращает имя пользователя)
+// Функция приветствия (возвращает имя пользователя)
 const greetings = () => {
   console.log('Welcom to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
@@ -40,6 +40,20 @@ const arrayOperators = (numbersOfOperators) => {
   return arrayOp;
 };
 
+// Функция для нахождения наибольшего делителя (Евклид)
+const nod = (x, y) => {
+  while (x !== 0 && y !== 0) {
+    if (x > y) {
+      // eslint-disable-next-line no-param-reassign
+      x %= y;
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      y %= x;
+    }
+  }
+  return x + y;
+};
+
 export {
-  randomNumber, greetings, arrayOperators, array as arr,
+  randomNumber, greetings, arrayOperators, array as arr, nod,
 };
