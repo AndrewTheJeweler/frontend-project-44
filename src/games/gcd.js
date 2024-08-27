@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { greetings, arr, nod } from '../index.js';
 
-const array = arr(6); // Определяем массив из случайных 6 симвово (диапазон 1-100 включительно)
+const array = arr(6); // Определяем массив из случайных 6 символов (диапазон 1-100 включительно)
 
 const gcdGames = () => {
   const name = greetings();
