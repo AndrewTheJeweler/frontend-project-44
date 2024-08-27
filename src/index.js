@@ -54,6 +54,20 @@ const nod = (x, y) => {
   return x + y;
 };
 
+// Функция для создания массива из арифметической прогрессии
+const arrProgression = () => {
+  const arr = [];
+  const firstNumber = randomNumber(1, 100);
+  const progression = randomNumber(1, 5);
+  let nextNumber = firstNumber + progression;
+  arr.push(firstNumber);
+  for (let i = 0; i < 9; i += 1) {
+    arr.push(nextNumber);
+    nextNumber += progression;
+  }
+  return arr;
+};
+
 export {
-  randomNumber, greetings, arrayOperators, array as arr, nod,
+  randomNumber, greetings, arrayOperators, array as arr, nod, arrProgression,
 };
