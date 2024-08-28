@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-// Функция для генирации рандомного числа
+// Функция для генерации рандомного числа
 const randomNumber = (min, max) => {
   const num = Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -100,10 +100,10 @@ const operatorsChek = (num1, operator, num2) => {
 // Логика всех игр
 const logicsOfGames = (type = 'progression') => {
   const name = greetings(); // Приветствие, запоминаем имя
-  if (type === 'progression') { // Проферяем тип игры - рандомная прогрессия
+  if (type === 'progression') { // Проверяем тип игры - рандомная прогрессия
     console.log('What number is missing in the progression?');
     for (let i = 0; i <= 2; i += 1) {
-      const array1 = arrProgression(); // Реализуем массив из рандомной арифметической прогресии
+      const array1 = arrProgression(); // Реализуем массив из рандомной арифметической прогрессии
       const rezult = array1.splice(randomNumber(0, 9), 1, '..'); // Удаляем из массива выше рандомное число, заменяя его на '..'
       const condition = array1.join(' '); // Изменяем тип на строку
       console.log(`Question: ${condition}`);
