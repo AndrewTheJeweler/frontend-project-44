@@ -13,7 +13,9 @@
 
 ### Copy this repository to your computer using the code below
 
-```sh $ git clone https://github.com/AndrewTheJeweler/frontend-project-44.git ```
+```sh 
+$ git clone https://github.com/AndrewTheJeweler/frontend-project-44.git
+```
 
 ### Update and install packages
 
