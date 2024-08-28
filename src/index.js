@@ -68,6 +68,46 @@ const arrProgression = () => {
   return arr;
 };
 
-export {
-  randomNumber, greetings, arrayOperators, array as arr, nod, arrProgression,
+// Функция на проверку является ли число простым
+const primeNumber = (number) => {
+  for (let i = 2; i <= Math.floor(Math.sqrt(number)); i += 1) {
+    if (number % i === 0) {
+      return 'no';
+    }
+  }
+  return 'yes';
 };
+
+// Функция на проверку является ли число четным
+// eslint-disable-next-line consistent-return
+const isNumberEven = (num, answer) => {
+  if ((num % 2 === 0 && answer === 'yes')) {
+    return 'yes';
+  } if (num % 2 !== 0) {
+    return 'no';
+  } if (num % 2 === 0) {
+    return 'yes';
+  }
+};
+
+// Функция для изменения типа оператора
+const operatorsChek = (num1, operator, num2) => {
+  let rezult;
+  switch (operator) {
+    case '*':
+      rezult = num1 * num2;
+      break;
+    case '+':
+      rezult = num1 + num2;
+      break;
+    default:
+      rezult = num1 - num2;
+  }
+  return rezult;
+};
+
+export {
+  randomNumber, greetings, arrayOperators, array as arr, nod, arrProgression, primeNumber,
+};
+
+export { isNumberEven, operatorsChek };
