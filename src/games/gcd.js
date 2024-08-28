@@ -6,22 +6,20 @@ const array = arr(6); // Определяем массив из случайны
 const gcdGames = () => {
   const name = greetings();
   console.log('Find the greatest common divisor of given numbers.');
-  let count = 0; // определяем счетчик для цикла
-  let i = 0; // Определяем счетчики для массивов
-  let k = 1; //
-  while (count <= 2) {
-    console.log(`Question: ${array[i]} ${array[k]}`);
+  let k = 1;
+  let o = 0;
+  for (let i = 0; i <= 2; i += 1) {
+    console.log(`Question: ${array[o]} ${array[k]}`);
     const answer = readlineSync.question('Your answer: ');
-    if (Number(answer) === nod(array[i], array[k])) {
+    if (Number(answer) === nod(array[o], array[k])) {
       console.log('Correct!');
-      count += 1;
-      i += 2;
+      o += 2;
       k += 2;
-      if (count === 3) {
+      if (i === 2) {
         console.log(`Congratulations, ${name}!`);
       }
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${nod(array[i], array[k])}'. \nLes't try again, ${name}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${nod(array[o], array[k])}'. \nLes't try again, ${name}!`);
       break;
     }
   }
