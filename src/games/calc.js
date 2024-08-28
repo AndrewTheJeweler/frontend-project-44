@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { greetings, arr, arrayOperators } from '../index.js'; // функции приветствия, массивов со случайными числами и операторами
+import {
+  greetings, arr, arrayOperators, operatorsChek,
+} from '../index.js';
 
 const array = arr(6);
 const arrOp = arrayOperators(3);
@@ -7,31 +9,17 @@ const arrOp = arrayOperators(3);
 const calcGames = () => {
   const name = greetings();
   console.log('What is the result of the expression?');
-  let count = 0;
-  let i = 0;
   let k = 1;
   let o = 0;
-  while (count <= 2) {
-    console.log(`Question: ${array[i]} ${arrOp[o]} ${array[k]}`);
-    let rezult;
-    switch (arrOp[o]) {
-      case '*':
-        rezult = array[i] * array[k];
-        break;
-      case '+':
-        rezult = array[i] + array[k];
-        break;
-      default:
-        rezult = array[i] - array[k];
-    }
+  for (let i = 0; i <= 2; i += 1) {
+    console.log(`Question: ${array[o]} ${arrOp[i]} ${array[k]}`);
+    const rezult = operatorsChek(array[o], arrOp[i], array[k]);
     const answer = readlineSync.question('Your answer: ');
     if (Number(answer) === rezult) {
       console.log('Correct!');
-      i += 2;
       k += 2;
-      o += 1;
-      count += 1;
-      if (count === 3) {
+      o += 2;
+      if (i === 2) {
         console.log(`Congratulations, ${name}!`);
       }
     } else {
