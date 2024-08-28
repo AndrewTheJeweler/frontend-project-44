@@ -17,10 +17,12 @@
 
 ### Update and install packages
 
-```sh $ make publish ```
-
-```sh $ npm link ```
-
+```sh
+$ make publish
+```
+```sh 
+$ npm link
+```
 ### To play use the following commands
 
 ```sh
