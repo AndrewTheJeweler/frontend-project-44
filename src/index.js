@@ -149,7 +149,7 @@ const logicsOfGames = (type = 'progression') => {
           console.log(`Congratulations, ${name}!`);
         }
       } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rezult}'. \nLes't try again, ${name}!`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rezult}'. \nLet's try again, ${name}!`);
         break;
       }
     }
