@@ -1,7 +1,7 @@
 import logicsOfGames from '../index.js';
 
-const progressionGame = () => {
+const startProgressionGame = () => {
   logicsOfGames('progression');
 };
 
-export default progressionGame;
+export default startProgressionGame;

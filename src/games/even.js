@@ -1,7 +1,7 @@
 import logicsOfGames from '../index.js';
 
-const evenGames = () => {
+const startEvenGame = () => {
   logicsOfGames('even');
 };
 
-export default evenGames;
+export default startEvenGame;

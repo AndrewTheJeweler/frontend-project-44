@@ -1,7 +1,7 @@
 import logicsOfGames from '../index.js';
 
-const primeGame = () => {
+const startPrimeGame = () => {
   logicsOfGames('prime');
 };
 
-export default primeGame;
+export default startPrimeGame;

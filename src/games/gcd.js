@@ -1,7 +1,7 @@
 import logicsOfGames from '../index.js';
 
-const gcdGames = () => {
+const startGcdGame = () => {
   logicsOfGames('gcd');
 };
 
-export default gcdGames;
+export default startGcdGame;
