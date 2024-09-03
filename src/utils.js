@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const randomNumber = (min, max) => {
+const getRandomNumber = (min, max) => {
   const num = Math.floor(Math.random() * (max - min + 1)) + min;
 
   return num;
@@ -14,17 +14,9 @@ const greetings = () => {
 };
 
 const operatorArray = ['*', '+', '-'];
-const randomOperator = () => {
-  const operatorIndex = randomNumber(0, operatorArray.length - 1);
+const getRandomOperator = () => {
+  const operatorIndex = getRandomNumber(0, operatorArray.length - 1);
   return operatorArray[operatorIndex];
-};
-
-const arrayOperators = (numbersOfOperators) => {
-  const arrayOp = [];
-  for (let i = 0; i < numbersOfOperators; i += 1) {
-    arrayOp.push(randomOperator());
-  }
-  return arrayOp;
 };
 
 const findGreaterDivisor = (x, y) => {
@@ -40,10 +32,10 @@ const findGreaterDivisor = (x, y) => {
   return x + y;
 };
 
-const arrProgression = () => {
+const getArrayProgression = () => {
   const arr = [];
-  const firstNumber = randomNumber(1, 100);
-  const progression = randomNumber(1, 5);
+  const firstNumber = getRandomNumber(1, 100);
+  const progression = getRandomNumber(1, 5);
   let nextNumber = firstNumber + progression;
   arr.push(firstNumber);
   for (let i = 0; i < 9; i += 1) {
@@ -53,25 +45,16 @@ const arrProgression = () => {
   return arr;
 };
 
-const primeNumber = (number) => {
+const isNumberPrime = (number) => {
   for (let i = 2; i <= Math.floor(Math.sqrt(number)); i += 1) {
     if (number % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
-// eslint-disable-next-line consistent-return
-const isNumberEven = (num, answer) => {
-  if ((num % 2 === 0 && answer === 'yes')) {
-    return 'yes';
-  } if (num % 2 !== 0) {
-    return 'no';
-  } if (num % 2 === 0) {
-    return 'yes';
-  }
-};
+const isNumberEven = (number) => number % 2 === 0;
 
 const operatorsCheck = (num1, operator, num2) => {
   let rezult;
@@ -89,7 +72,7 @@ const operatorsCheck = (num1, operator, num2) => {
 };
 
 export {
-  randomNumber, greetings, operatorsCheck, isNumberEven, primeNumber,
+  getRandomNumber, greetings, operatorsCheck, isNumberEven, isNumberPrime,
 };
 
-export { arrProgression, findGreaterDivisor, arrayOperators };
+export { getArrayProgression, findGreaterDivisor, getRandomOperator };
