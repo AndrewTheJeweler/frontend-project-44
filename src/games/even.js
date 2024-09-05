@@ -1,14 +1,18 @@
-import enginOfGames from '../index.js';
-import { getRandomNumber, isNumberEven } from '../utils.js';
+import startEngin from '../index.js';
+import getRandomNumber from '../utils.js';
+
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isNumberEven = (number) => number % 2 === 0;
+
+const getRound = () => {
+  const question = getRandomNumber(1, 100);
+  const answer = isNumberEven(question) ? 'yes' : 'no';
+  return [question, answer];
+};
 
 const startEvenGame = () => {
-  const exercise = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const round = () => {
-    const question = getRandomNumber(1, 100);
-    const answer = isNumberEven(question) ? 'yes' : 'no';
-    return [question, answer];
-  };
-  enginOfGames(exercise, round);
+  startEngin(description, getRound);
 };
 
 export default startEvenGame;

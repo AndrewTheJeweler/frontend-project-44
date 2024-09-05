@@ -1,16 +1,31 @@
-import enginOfGames from '../index.js';
-import { getRandomNumber, findGreaterDivisor } from '../utils.js';
+import startEngin from '../index.js';
+import getRandomNumber from '../utils.js';
+
+const description = 'Find the greatest common divisor of given numbers.';
+
+const findGreaterDivisor = (num1, num2) => {
+  let x = num1;
+  let y = num2;
+  while (x !== 0 && y !== 0) {
+    if (x > y) {
+      x %= y;
+    } else {
+      y %= x;
+    }
+  }
+  return x + y;
+};
+
+const getRound = () => {
+  const number1 = getRandomNumber(1, 10);
+  const number2 = getRandomNumber(1, 10);
+  const question = `${number1} ${number2}`;
+  const greaterDivisor = findGreaterDivisor(number1, number2);
+  return [question, String(greaterDivisor)];
+};
 
 const startGcdGame = () => {
-  const exercise = 'Find the greatest common divisor of given numbers.';
-  const round = () => {
-    const firstNumber = getRandomNumber(1, 10);
-    const secondNumber = getRandomNumber(1, 10);
-    const question = `${firstNumber} ${secondNumber}`;
-    const greaterDivisor = findGreaterDivisor(firstNumber, secondNumber);
-    return [question, String(greaterDivisor)];
-  };
-  enginOfGames(exercise, round);
+  startEngin(description, getRound);
 };
 
 export default startGcdGame;
