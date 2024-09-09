@@ -1,39 +1,34 @@
-import startEngin from '../index.js';
+import startEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What is the result of the expression?';
 
-const operatorsCheck = (num1, operator, num2) => {
-  let rezult;
+const calculate = (num1, operator, num2) => {
   switch (operator) {
     case '*':
-      rezult = num1 * num2;
-      break;
+      return num1 * num2;
     case '+':
-      rezult = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      rezult = num1 - num2;
-      break;
+      return num1 - num2;
     default:
       throw new Error(`Unknown operator: '${operator}'!`);
   }
-  return rezult;
 };
 
-const operatorsArray = ['*', '+', '-'];
+const operators = ['*', '+', '-'];
 
 const getRound = () => {
   const number1 = getRandomNumber(1, 10);
   const number2 = getRandomNumber(1, 10);
-  const randomOperator = operatorsArray[getRandomNumber(0, operatorsArray.length - 1)];
+  const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
   const question = `${number1} ${randomOperator} ${number2}`;
-  const answer = operatorsCheck(number1, randomOperator, number2);
+  const answer = calculate(number1, randomOperator, number2);
   return [question, String(answer)];
 };
 
 const startCalcGame = () => {
-  startEngin(description, getRound);
+  startEngine(description, getRound);
 };
 
 export default startCalcGame;

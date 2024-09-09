@@ -1,4 +1,4 @@
-import startEngin from '../index.js';
+import startEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -12,7 +12,7 @@ const getRound = () => {
 };
 
 const startEvenGame = () => {
-  startEngin(description, getRound);
+  startEngine(description, getRound);
 };
 
 export default startEvenGame;
